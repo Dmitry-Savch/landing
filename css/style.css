@@ -1,0 +1,1548 @@
+/* Base Styles */
+:root {
+  --primary-color: #6a5acd;
+  --secondary-color: #9370db;
+  --accent-color: #4b0082;
+  --light-color: #f5f5f5;
+  --dark-color: #333;
+  --text-color: #444;
+  --border-color: #e0e0e0;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --gradient-start: #8a2be2;
+  --gradient-end: #9370db;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--light-color);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px var(--shadow-color);
+  object-fit: cover;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+}
+
+.divider {
+  height: 3px;
+  width: 60px;
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+  margin: 0 auto;
+}
+
+section {
+  padding: 80px 0;
+}
+
+/* Header */
+header {
+  background-color: white;
+  box-shadow: 0 2px 10px var(--shadow-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 15px;
+}
+
+.logo h1 {
+  font-size: 1.8rem;
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 30px;
+}
+
+nav ul li a {
+  color: var(--dark-color);
+  font-weight: 600;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+  bottom: -5px;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+  width: 100%;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 30px;
+  height: 3px;
+  background-color: var(--dark-color);
+  margin: 3px 0;
+  transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, rgba(138, 43, 226, 0.1), rgba(147, 112, 219, 0.1));
+  padding: 100px 0;
+}
+
+.hero .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-content h2 {
+  font-size: 3rem;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.hero-image {
+  flex: 1;
+  height: 400px;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Welcome Section */
+.welcome .content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+/* Story Section */
+.story .content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.story-image {
+  flex: 1;
+  height: 350px;
+}
+
+.story-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-text {
+  flex: 1;
+}
+
+/* Features Section */
+.features {
+  background-color: white;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.feature-card {
+  background-color: var(--light-color);
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 5px 15px var(--shadow-color);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+}
+
+.feature-card h3 {
+  color: var(--accent-color);
+  margin: 15px 0;
+  font-size: 1.5rem;
+}
+
+.feature-icon {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.feature-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* World Section */
+.world .content {
+  text-align: center;
+}
+
+.world-image {
+  margin-top: 40px;
+  height: 400px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.world-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* CTA Section */
+.cta {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: white;
+  text-align: center;
+  padding: 60px 0;
+}
+
+.cta-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.cta-content p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+/* Secrets Section */
+.secrets .content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+  background-color: var(--dark-color);
+  color: white;
+  padding: 60px 0 20px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-logo h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer-links h4::after,
+.footer-contact h4::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 2px;
+  background: var(--secondary-color);
+  bottom: 0;
+  left: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+  color: #ccc;
+}
+
+.footer-links ul li a:hover {
+  color: white;
+}
+
+.footer-contact p {
+  margin-bottom: 10px;
+  color: #ccc;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .hero .container {
+    flex-direction: column;
+  }
+
+  .hero-content {
+    padding-right: 0;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .story .content {
+    flex-direction: column;
+  }
+
+  .story-image {
+    order: -1;
+    margin-bottom: 30px;
+    width: 100%;
+  }
+
+  .hero-image,
+  .world-image {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 5px 10px var(--shadow-color);
+    transform: translateY(-150%);
+    transition: transform 0.3s ease;
+  }
+
+  nav.active {
+    transform: translateY(0);
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .hero-content h2 {
+    font-size: 2.5rem;
+  }
+
+  .hero-image,
+  .story-image,
+  .world-image {
+    height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  section {
+    padding: 60px 0;
+  }
+
+  .hero {
+    padding: 80px 0;
+  }
+
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+
+  .hero-image,
+  .story-image,
+  .world-image {
+    height: 250px;
+  }
+}
+
+/* Додаємо унікальні стилі для сторінки privacy.html */
+
+/* Заголовок сторінки */
+.privacy-page-header {
+  background: linear-gradient(135deg, rgba(138, 43, 226, 0.1), rgba(147, 112, 219, 0.1));
+  padding: 60px 0;
+  text-align: left;
+}
+
+.privacy-section-header {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.privacy-section-header h2 {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+}
+
+.privacy-divider {
+  height: 3px;
+  width: 60px;
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+  margin: 0;
+}
+
+/* Основний контент */
+.privacy-content-section {
+  padding: 60px 0;
+  background-color: white;
+}
+
+.privacy-policy-section {
+  width: 100%;
+  margin: 0;
+
+}
+
+.privacy-policy-section:last-child {
+  margin-bottom: 0;
+}
+
+.privacy-policy-section h3 {
+  color: var(--accent-color);
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.privacy-policy-section h3::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+  bottom: 0;
+  left: 0;
+}
+
+.privacy-policy-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.privacy-policy-section p:last-child {
+  margin-bottom: 0;
+}
+
+.privacy-policy-subsection {
+  margin-top: 30px;
+  padding-left: 20px;
+  border-left: 2px solid rgba(138, 43, 226, 0.2);
+}
+
+.privacy-policy-subsection h4 {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+/* Адаптивність для сторінки privacy */
+@media (max-width: 768px) {
+  .privacy-section-header h2 {
+    font-size: 2rem;
+  }
+
+  .privacy-policy-section {
+    padding: 0 15px;
+  }
+
+  .privacy-policy-section h3 {
+    font-size: 1.6rem;
+  }
+
+  .privacy-policy-subsection {
+    padding-left: 15px;
+  }
+
+  .privacy-policy-subsection h4 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Заголовок сторінки */
+.terms-page-header {
+  background: linear-gradient(135deg, rgba(138, 43, 226, 0.1), rgba(147, 112, 219, 0.1));
+  padding: 60px 0;
+  text-align: left;
+}
+
+.terms-section-header {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.terms-section-header h2 {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+}
+
+.terms-divider {
+  height: 3px;
+  width: 60px;
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+  margin: 0;
+}
+
+/* Основний контент */
+.terms-content-section {
+  padding: 60px 0;
+  background-color: white;
+}
+
+.terms-policy-section {
+  max-width: 100%;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+}
+
+.terms-policy-section:last-child {
+  margin-bottom: 0;
+}
+
+.terms-policy-section h3 {
+  color: var(--accent-color);
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.terms-policy-section h3::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+  bottom: 0;
+  left: 0;
+}
+
+.terms-policy-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.terms-policy-section p:last-child {
+  margin-bottom: 0;
+}
+
+.terms-policy-subsection {
+  margin-top: 30px;
+  padding-left: 20px;
+  border-left: 2px solid rgba(138, 43, 226, 0.2);
+}
+
+.terms-policy-subsection h4 {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+/* Адаптивність для сторінки terms */
+@media (max-width: 768px) {
+  .terms-section-header h2 {
+    font-size: 2rem;
+  }
+
+  .terms-policy-section {
+    padding: 0 15px;
+  }
+
+  .terms-policy-section h3 {
+    font-size: 1.6rem;
+  }
+
+  .terms-policy-subsection {
+    padding-left: 15px;
+  }
+
+  .terms-policy-subsection h4 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Оновлені стилі для сторінки contact.html без карти та форми */
+
+/* Заголовок сторінки */
+.contact-page-header {
+  background: linear-gradient(135deg, rgba(138, 43, 226, 0.1), rgba(147, 112, 219, 0.1));
+  padding: 60px 0;
+  text-align: left;
+}
+
+.contact-section-header {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.contact-section-header h2 {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+}
+
+.contact-divider {
+  height: 3px;
+  width: 60px;
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+  margin: 0;
+}
+
+/* Основний контент */
+.contact-content-section {
+  padding: 60px 0;
+  background-color: white;
+}
+
+.contact-intro {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  text-align: left;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+/* Контейнер з інформаційними картками */
+.contact-info-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-info-card {
+  background-color: var(--light-color);
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 5px 15px var(--shadow-color);
+  display: flex;
+  align-items: flex-start;
+  transition: transform 0.3s ease;
+}
+
+.contact-info-card:hover {
+  transform: translateY(-5px);
+}
+
+.contact-info-icon {
+  margin-right: 15px;
+  color: var(--primary-color);
+  flex-shrink: 0;
+}
+
+.contact-info-content h3 {
+  color: var(--accent-color);
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.contact-info-content p {
+  margin-bottom: 5px;
+  color: var(--text-color);
+}
+
+/* FAQ секція */
+.contact-faq-section {
+  padding: 60px 0;
+  background-color: var(--light-color);
+}
+
+.contact-faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-faq-item {
+  margin-bottom: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: white;
+}
+
+.contact-faq-question {
+  background-color: var(--light-color);
+  padding: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.contact-faq-question h3 {
+  color: var(--accent-color);
+  font-size: 1.3rem;
+  margin: 0;
+  padding-right: 30px;
+}
+
+.contact-faq-question::after {
+  content: "+";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.contact-faq-item.active .contact-faq-question::after {
+  content: "-";
+}
+
+.contact-faq-answer {
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.contact-faq-item.active .contact-faq-answer {
+  padding: 20px;
+  max-height: 200px;
+}
+
+.contact-faq-answer p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.contact-info-text h3 {
+  font-size: 1.3rem;
+}
+
+.contact-info-text p {
+  font-size: 1rem;
+}
+
+
+/* Адаптивність для сторінки contact */
+@media (max-width: 768px) {
+  .contact-section-header h2 {
+    font-size: 2rem;
+  }
+
+  .contact-info-container {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-faq-question h3 {
+    font-size: 1.1rem;
+  }
+}
+
+.bulmaca-hero {
+  background: linear-gradient(135deg, rgba(138, 43, 226, 0.8), rgba(147, 112, 219, 0.8)),
+    url("/images/secret_castle.jpg") no-repeat center center;
+  background-size: cover;
+  padding: 100px 0;
+  color: white;
+  text-align: center;
+}
+
+.bulmaca-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.bulmaca-hero-content h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.bulmaca-hero-content p {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Заголовки секцій */
+.bulmaca-section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.bulmaca-section-header h2 {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+}
+
+.bulmaca-divider {
+  height: 3px;
+  width: 60px;
+  background: linear-gradient(to right var(--gradient-start), var(--gradient-end));
+  margin: 0;
+}
+
+/* Вступна секція */
+.bulmaca-intro {
+  padding: 80px 0;
+  background-color: white;
+}
+
+.bulmaca-intro-content {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+/* Типи головоломок */
+.bulmaca-types {
+  padding: 80px 0;
+  background-color: var(--light-color);
+}
+
+.bulmaca-types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.bulmaca-type-card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px var(--shadow-color);
+  transition: transform 0.3s ease;
+}
+
+.bulmaca-type-card:hover {
+  transform: translateY(-10px);
+}
+
+.bulmaca-type-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.bulmaca-type-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.bulmaca-type-card:hover .bulmaca-type-image img {
+  transform: scale(1.1);
+}
+
+.bulmaca-type-content {
+  padding: 25px;
+}
+
+.bulmaca-type-content h3 {
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.bulmaca-type-content p {
+  line-height: 1.6;
+}
+
+/* Рівні складності */
+.bulmaca-difficulty {
+  padding: 80px 0;
+  background-color: white;
+}
+
+.bulmaca-difficulty-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.bulmaca-difficulty-content>p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.bulmaca-difficulty-levels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.bulmaca-difficulty-level {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--light-color);
+  box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.bulmaca-difficulty-level h3 {
+  color: var(--accent-color);
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.bulmaca-difficulty-bar {
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.bulmaca-difficulty-fill {
+  height: 100%;
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+  border-radius: 5px;
+}
+
+.bulmaca-difficulty-level p {
+  line-height: 1.6;
+}
+
+/* Поради */
+.bulmaca-tips {
+  padding: 80px 0;
+  background-color: var(--light-color);
+}
+
+.bulmaca-tips-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.bulmaca-tip {
+  display: flex;
+  margin-bottom: 40px;
+  align-items: flex-start;
+}
+
+.bulmaca-tip:last-child {
+  margin-bottom: 0;
+}
+
+.bulmaca-tip-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  opacity: 0.7;
+  margin-right: 20px;
+  line-height: 1;
+}
+
+.bulmaca-tip-text h3 {
+  color: var(--accent-color);
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.bulmaca-tip-text p {
+  line-height: 1.6;
+}
+
+/* Цитата */
+.bulmaca-quote {
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: white;
+}
+
+.bulmaca-quote-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.bulmaca-quote-content blockquote {
+  font-size: 1.8rem;
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.bulmaca-quote-content blockquote::before,
+.bulmaca-quote-content blockquote::after {
+  content: '"';
+  font-size: 4rem;
+  position: absolute;
+  opacity: 0.3;
+}
+
+.bulmaca-quote-content blockquote::before {
+  top: -20px;
+  left: -20px;
+}
+
+.bulmaca-quote-content blockquote::after {
+  bottom: -40px;
+  right: -20px;
+}
+
+.bulmaca-quote-content cite {
+  font-size: 1.2rem;
+  font-style: normal;
+}
+
+/* Адаптивність */
+@media (max-width: 992px) {
+  .bulmaca-hero-content h2 {
+    font-size: 2.5rem;
+  }
+
+  .bulmaca-section-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .bulmaca-quote-content blockquote {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .bulmaca-hero {
+    padding: 80px 0;
+  }
+
+  .bulmaca-hero-content h2 {
+    font-size: 2rem;
+  }
+
+  .bulmaca-hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .bulmaca-section-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .bulmaca-tip {
+    flex-direction: column;
+  }
+
+  .bulmaca-tip-number {
+    margin-bottom: 10px;
+  }
+
+  .bulmaca-quote-content blockquote {
+    font-size: 1.3rem;
+  }
+
+  .bulmaca-quote-content blockquote::before,
+  .bulmaca-quote-content blockquote::after {
+    font-size: 3rem;
+  }
+}
+
+.yazitlar-hero {
+  background: linear-gradient(135deg, rgba(75, 0, 130, 0.8), rgba(138, 43, 226, 0.8)), url("/images/mechanism.jpg") no-repeat center center;
+  background-size: cover;
+  padding: 100px 0;
+  color: white;
+  text-align: center;
+}
+
+.yazitlar-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.yazitlar-hero-content h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.yazitlar-hero-content p {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Заголовки секцій */
+.yazitlar-section-header {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.yazitlar-section-header h2 {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+}
+
+.yazitlar-divider {
+  height: 3px;
+  width: 60px;
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+  margin: 0;
+}
+
+/* Вступна секція */
+.yazitlar-intro {
+  padding: 80px 0;
+  background-color: white;
+}
+
+.yazitlar-intro-content {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.yazitlar-intro-content p {
+  margin-bottom: 20px;
+}
+
+.yazitlar-intro-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Секція алфавіту */
+.yazitlar-alphabet {
+  padding: 80px 0;
+  background-color: var(--light-color);
+}
+
+.yazitlar-alphabet-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.yazitlar-alphabet-content>p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.yazitlar-alphabet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.yazitlar-symbol {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 5px 15px var(--shadow-color);
+  transition: transform 0.3s ease;
+}
+
+.yazitlar-symbol:hover {
+  transform: translateY(-5px);
+}
+
+.yazitlar-symbol-image {
+  font-size: 3rem;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.yazitlar-symbol-name {
+  font-weight: 700;
+  color: var(--dark-color);
+  margin-bottom: 5px;
+}
+
+.yazitlar-symbol-meaning {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.yazitlar-note {
+  font-style: italic;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Секція локацій */
+.yazitlar-locations {
+  padding: 80px 0;
+  background-color: white;
+}
+
+.yazitlar-locations-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.yazitlar-locations-content>p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  max-width: 800px;
+}
+
+.yazitlar-locations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.yazitlar-location-card {
+  background-color: var(--light-color);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px var(--shadow-color);
+  transition: transform 0.3s ease;
+}
+
+.yazitlar-location-card:hover {
+  transform: translateY(-10px);
+}
+
+.yazitlar-location-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.yazitlar-location-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.yazitlar-location-card:hover .yazitlar-location-image img {
+  transform: scale(1.1);
+}
+
+.yazitlar-location-content {
+  padding: 25px;
+}
+
+.yazitlar-location-content h3 {
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.yazitlar-location-content p {
+  line-height: 1.6;
+}
+
+/* Секція перекладу */
+.yazitlar-translation {
+  padding: 80px 0;
+  background-color: var(--light-color);
+}
+
+.yazitlar-translation-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.yazitlar-translation-content>p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.yazitlar-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.yazitlar-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.yazitlar-step-number {
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.yazitlar-step-content h3 {
+  color: var(--accent-color);
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.yazitlar-step-content p {
+  line-height: 1.6;
+}
+
+/* Секція прикладів */
+.yazitlar-examples {
+  padding: 80px 0;
+  background-color: white;
+}
+
+.yazitlar-examples-content {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.yazitlar-example {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  background-color: var(--light-color);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.yazitlar-example-original h3,
+.yazitlar-example-translation h3 {
+  color: var(--accent-color);
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.yazitlar-example-text {
+  font-size: 2rem;
+  letter-spacing: 5px;
+  color: var(--primary-color);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.yazitlar-example-translation p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.yazitlar-example-hint {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+/* Цитата */
+.yazitlar-quote {
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: white;
+}
+
+.yazitlar-quote-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.yazitlar-quote-content blockquote {
+  font-size: 1.8rem;
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.yazitlar-quote-content blockquote::before,
+.yazitlar-quote-content blockquote::after {
+  content: '"';
+  font-size: 4rem;
+  position: absolute;
+  opacity: 0.3;
+}
+
+.yazitlar-quote-content blockquote::before {
+  top: -20px;
+  left: -20px;
+}
+
+.yazitlar-quote-content blockquote::after {
+  bottom: -40px;
+  right: -20px;
+}
+
+.yazitlar-quote-content cite {
+  font-size: 1.2rem;
+  font-style: normal;
+}
+
+/* Адаптивність */
+@media (max-width: 992px) {
+  .yazitlar-hero-content h2 {
+    font-size: 2.5rem;
+  }
+
+  .yazitlar-section-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .yazitlar-example {
+    grid-template-columns: 1fr;
+  }
+
+  .yazitlar-quote-content blockquote {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .yazitlar-hero {
+    padding: 80px 0;
+  }
+
+  .yazitlar-hero-content h2 {
+    font-size: 2rem;
+  }
+
+  .yazitlar-hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .yazitlar-section-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .yazitlar-step {
+    flex-direction: column;
+  }
+
+  .yazitlar-step-number {
+    margin-bottom: 10px;
+  }
+
+  .yazitlar-quote-content blockquote {
+    font-size: 1.3rem;
+  }
+
+  .yazitlar-quote-content blockquote::before,
+  .yazitlar-quote-content blockquote::after {
+    font-size: 3rem;
+  }
+}
